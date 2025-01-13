@@ -1,0 +1,6 @@
+Initial Cache:
+3:C -> 2:B -> 1:A -> NULL
+Accessing key 2:
+2:B -> 3:C -> 1:A -> NULL
+Adding key 4 (evicts key 1):
+4:D -> 2:B -> 3:C -> NULL
