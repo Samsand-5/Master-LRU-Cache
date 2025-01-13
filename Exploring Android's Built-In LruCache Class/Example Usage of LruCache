@@ -1,0 +1,16 @@
+import android.util.LruCache
+
+fun main() {
+    val lruCache = LruCache<Int, String>(3)
+
+    lruCache.put(1, "A")
+    lruCache.put(2, "B")
+    lruCache.put(3, "C")
+    println("Initial Cache: ${lruCache.snapshot()}")
+
+    lruCache.get(2) // Access key 2
+    println("After Accessing Key 2: ${lruCache.snapshot()}")
+
+    lruCache.put(4, "D") // Add new, evict least recently used
+    println("After Adding Key 4: ${lruCache.snapshot()}")
+}
