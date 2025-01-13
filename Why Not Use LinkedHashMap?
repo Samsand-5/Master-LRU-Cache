@@ -1,0 +1,10 @@
+Kotlin's LinkedHashMap can simplify LRU implementation with its accessOrder parameter. While it's an excellent choice for production, building the cache from scratch offers:
+
+Control: Tailor the cache behavior for specific use cases.
+Learning: Understand the underlying mechanics of algorithm design.
+
+Here’s how you can implement an LRU cache with LinkedHashMap in a single line:
+
+val lruCache = object : LinkedHashMap<Int, String>(capacity, 0.75f, true) {
+    override fun removeEldestEntry(eldest: MutableMap.MutableEntry<Int, String>) = size > capacity
+}
