@@ -1,0 +1,11 @@
+get(key):
+
+HashMap lookup: O(1).
+Moving the node to the head: O(1).
+Total: O(1).
+
+put(key, value):
+
+HashMap insertion: O(1).
+Adding or removing a node in the doubly linked list: O(1).
+Total: O(1).
