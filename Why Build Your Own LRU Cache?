@@ -1,0 +1,14 @@
+1. Customization
+Prioritized eviction policies (e.g., time, weights).
+Fine-tuning memory usage for specific applications.
+
+2. Cross-Platform Compatibility
+LruCache is Android-specific. Custom implementations work across platforms, like Kotlin Multiplatform.
+
+3. Algorithm Learning and Control
+Building your own cache deepens your understanding of:
+Algorithm design.
+Optimizing time and space complexities.
+
+4. Framework Independence
+Custom caches avoid Android framework lock-in, enabling easier migration to other technologies.
