@@ -1,0 +1,73 @@
+//The LRUCache class ties everything together.
+
+class LRUCache<K, V>(private val capacity: Int) {
+    private val map = mutableMapOf<K, CacheNode<K, V>>() // For O(1) lookups
+    private var head: CacheNode<K, V>? = null // Most recently used
+    private var tail: CacheNode<K, V>? = null // Least recently used
+
+    // Retrieve a value from the cache
+    fun get(key: K): V? {
+        val node = map[key] ?: return null
+        moveToHead(node) // Accessing the node makes it most recently used
+        return node.value
+    }
+
+    // Add or update a key-value pair in the cache
+    fun put(key: K, value: V) {
+        val existingNode = map[key]
+        if (existingNode != null) {
+            existingNode.value = value
+            moveToHead(existingNode) // Update the usage
+        } else {
+            val newNode = CacheNode(key, value)
+            if (map.size == capacity) {
+                removeTail() // Evict the least recently used item
+            }
+            addToHead(newNode)
+            map[key] = newNode
+        }
+    }
+
+    // Move a node to the head (most recently used position)
+    private fun moveToHead(node: CacheNode<K, V>) {
+        removeNode(node)
+        addToHead(node)
+    }
+
+    // Add a node to the head of the list
+    private fun addToHead(node: CacheNode<K, V>) {
+        node.next = head
+        node.prev = null
+        head?.prev = node
+        head = node
+        if (tail == null) {
+            tail = node // If this is the first node, it’s also the tail
+        }
+    }
+
+    // Remove a node from the list
+    private fun removeNode(node: CacheNode<K, V>) {
+        node.prev?.next = node.next
+        node.next?.prev = node.prev
+        if (node == head) head = node.next
+        if (node == tail) tail = node.prev
+    }
+
+    // Remove the least recently used (tail) node
+    private fun removeTail() {
+        tail?.let {
+            map.remove(it.key) // Remove it from the map
+            removeNode(it)
+        }
+    }
+
+    // Debug helper: Print the current state of the cache
+    fun printCache() {
+        var current = head
+        while (current != null) {
+            print("${current.key}:${current.value} -> ")
+            current = current.next
+        }
+        println("NULL")
+    }
+}
