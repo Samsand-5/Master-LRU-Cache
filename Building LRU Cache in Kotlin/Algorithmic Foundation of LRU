@@ -1,0 +1,9 @@
+To achieve an efficient LRU cache, we rely on two data structures working in tandem:
+
+HashMap (Dictionary): Provides O(1) access to cache items by key.
+Doubly Linked List: Maintains the order of usage, with the head representing the most recently used item and the tail representing the least recently used.
+
+This combination allows us to:
+
+Insert/Delete in O(1) via linked list operations.
+Lookup in O(1) using the hash map.
