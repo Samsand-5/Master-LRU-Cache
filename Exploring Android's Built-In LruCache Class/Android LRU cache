@@ -1,0 +1,2 @@
+When working with Android, you’ll find that the platform already provides a convenient android.util.LruCache class for implementing an LRU caching mechanism. 
+This built-in utility simplifies caching in Android applications, optimized for use cases like memory caching for images, strings, or data objects.
