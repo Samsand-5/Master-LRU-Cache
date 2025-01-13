@@ -1,0 +1,2 @@
+The Android LruCache class is a reliable tool for many applications, but building your own LRU cache offers flexibility, deeper insights, and cross-platform compatibility.
+Whether you choose LruCache or a custom solution, the key is to align the approach with your project’s requirements.
