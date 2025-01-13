@@ -1,0 +1,9 @@
+An LRU Cache is a data structure that removes the least recently used items when the cache exceeds its capacity. 
+It ensures efficient memory management by prioritizing frequently accessed items.
+
+Each time an item is accessed, it’s marked as recently used.
+If the cache exceeds its maximum capacity, the least recently used item is evicted.
+
+Image Caching: Storing images for faster retrieval in mobile apps.
+Web Browsers: Caching recently visited web pages.
+Database Query Results: Storing results of expensive queries to reduce latency.
