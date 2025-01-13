@@ -1,0 +1,3 @@
+Constant-Time Operations: Retrievals, insertions, and updates should happen in O(1).
+Order Management: Maintain the order of usage to quickly identify the least recently used item.
+Fixed Capacity: Ensure the cache doesn’t grow uncontrollably.
