@@ -1,0 +1,11 @@
+Use android.util.LruCache When...
+1. You need a quick, reliable cache for Android-specific use cases like image or data caching.
+2. Your cache is memory-bound and doesn’t require integration with external systems.
+3. You want to save development time and rely on well-tested code.
+4. The default LruCache API fits your project needs.
+
+Build Your Own LRU Cache When...
+1. You need complete flexibility over the cache’s behavior or require custom eviction policies.
+2. Your use case spans multiple platforms (e.g., KMP) or requires distributed caching strategies.
+3. You’re optimizing for edge cases or fine-tuning performance for specific scenarios.
+4. You want to deeply understand and control caching algorithms for educational or architectural reasons.
