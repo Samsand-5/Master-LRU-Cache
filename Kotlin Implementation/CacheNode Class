@@ -1,0 +1,7 @@
+data class CacheNode<K, V>(
+    val key: K,
+    var value: V,
+    var prev: CacheNode<K, V>? = null,
+    var next: CacheNode<K, V>? = null
+)
+//Each node in our doubly linked list will represent a cache entry. It will store the key-value pair along with pointers to the next and previous nodes:
