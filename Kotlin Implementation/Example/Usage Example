@@ -1,0 +1,20 @@
+fun main() {
+    val lruCache = LRUCache<Int, String>(3)
+
+    // Adding elements
+    lruCache.put(1, "A")
+    lruCache.put(2, "B")
+    lruCache.put(3, "C")
+    println("Initial Cache:")
+    lruCache.printCache() // Output: 3:C -> 2:B -> 1:A -> NULL
+
+    // Access an item
+    println("Accessing key 2:")
+    lruCache.get(2)
+    lruCache.printCache() // Output: 2:B -> 3:C -> 1:A -> NULL
+
+    // Add a new item, evicting the least recently used
+    println("Adding key 4 (evicts key 1):")
+    lruCache.put(4, "D")
+    lruCache.printCache() // Output: 4:D -> 2:B -> 3:C -> NULL
+}
